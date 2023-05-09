@@ -1,6 +1,6 @@
 import PostContent from "@/components/posts/post-detail/PostContent";
 import { getPostData, getPostsFiles } from "@/lib/posts-utill";
-import { Post } from "@/type/interface";
+import { PostContent as Post } from "@/type/interface";
 import { GetStaticPropsContext } from "next";
 import Head from "next/head";
 
