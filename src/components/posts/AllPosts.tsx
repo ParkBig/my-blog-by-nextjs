@@ -1,8 +1,8 @@
 import style from "@/components/posts/allPosts.module.css";
 import PostsGrid from "./PostsGrid";
-import { Post } from "@/type/interface";
+import { PostContent } from "@/type/interface";
 
-const AllPost = ({posts}: {posts: Post[]}) => {
+const AllPosts = ({posts}: {posts: PostContent[]}) => {
   return (
     <section className={style.posts}>
       <h1>All Posts</h1>
@@ -11,4 +11,4 @@ const AllPost = ({posts}: {posts: Post[]}) => {
   )
 }
 
-export default AllPost;
+export default AllPosts;

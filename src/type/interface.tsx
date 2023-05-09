@@ -1,11 +1,24 @@
-export interface Post {
+export interface PostContent {
   title: string;
+  image: string;
   content: string;
   date: string;
   excerpt: string;
-  image: string;
   slug: string;
   isFeatured: string;
+}
+
+export interface ProjectContent {
+  id: string;
+  title: string,
+  subTitle: string,
+  image: string[],
+  content: string,
+  subContent: string,
+  github: string,
+  url: string,
+  stack: string,
+  deployment: string,
 }
 
 export interface ReqBody {
@@ -28,3 +41,18 @@ export interface NotificationProps {
 }
 
 export type Status = "success" | "error" | "pending" | string;
+
+export interface GetAboutMe {
+  key: string;
+  value: string;
+  image: string;
+}
+
+export interface SkillsContent {
+  category: "Frontend" | "Deploy" | "Database" | "VerControl";
+  data: SkillsData[];
+}
+
+export interface SkillsData {
+  skillImage: string;
+}

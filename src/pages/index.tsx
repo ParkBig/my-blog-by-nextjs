@@ -1,28 +1,36 @@
-import FeaturedPosts from "@/components/home-page/FeaturedPosts";
-import Hero from "@/components/home-page/Hero";
+import Hero from "@/components/home-page/hero/Hero";
+import MeSummary from "@/components/home-page/me-info/MeSummary";
+import MyProject from "@/components/home-page/my-project/MyProject";
+import MySkills from "@/components/home-page/my-skills/MySkills";
+import getAllProjects from "@/lib/my-project-data";
+import getMySkills from "@/lib/my-skills";
 import { getFeaturedPosts } from "@/lib/posts-utill";
-import { Post } from "@/type/interface";
+import { ProjectContent, SkillsContent } from "@/type/interface";
 import Head from "next/head";
 
-const HomePage = ({posts}: {posts: Post[]}) => {
+const HomePage = ({ projects, skills }: { projects: ProjectContent[], skills: SkillsContent[] }) => {
   return (
     <>
-    <Head>
-      <title>jw&apos; Blog</title>
-      <meta name="description" content="I post about programming and web development."/>
-    </Head>
+      <Head>
+        <title>jw&apos; Blog</title>
+        <meta name="description" content="I post about programming and web development."/>
+      </Head>
       <Hero />
-      <FeaturedPosts posts={posts} />
+      <MeSummary />
+      <MySkills skills={skills} />
+      <MyProject projects={projects} />
     </>
   )
 }
 
 export const getStaticProps = () => {
-  const featuredPosts = getFeaturedPosts();
+  const projects = getAllProjects();
+  const skills = getMySkills();
 
   return {
     props: {
-      posts: featuredPosts
+      projects,
+      skills
     }
   }
 };

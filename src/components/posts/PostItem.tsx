@@ -1,9 +1,9 @@
 import style from "@/components/posts/postItem.module.css";
-import { Post } from "@/type/interface";
+import { PostContent } from "@/type/interface";
 import Image from "next/image";
 import Link from "next/link";
 
-const PostItem = ({post}: { post: Post }) => {
+const PostItem = ({post}: { post: PostContent }) => {
   const formattedDate = new Date(post.date).toLocaleDateString("en-US", {
     day: "numeric",
     month: "long",

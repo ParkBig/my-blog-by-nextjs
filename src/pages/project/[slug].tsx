@@ -1,0 +1,10 @@
+
+const ProjectDetailPage = () => {
+  return (
+    <h1>
+      h1
+    </h1>
+  )
+}
+
+export default ProjectDetailPage;

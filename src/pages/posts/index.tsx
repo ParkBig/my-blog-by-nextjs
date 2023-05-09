@@ -1,16 +1,16 @@
-import AllPost from "@/components/posts/AllPost";
+import AllPosts from "@/components/posts/AllPosts";
 import { getAllPosts } from "@/lib/posts-utill";
-import { Post } from "@/type/interface";
+import { PostContent } from "@/type/interface";
 import Head from "next/head";
 
-const AllPostsPage = ({posts}: {posts: Post[]}) => {
+const AllPostsPage = ({posts}: {posts: PostContent[]}) => {
   return (
     <>
       <Head>
         <title>All Posts</title>
         <meta name="description" content="A list of all programming-related tutorials and posts!" />
       </Head>
-      <AllPost posts={posts}/>
+      <AllPosts posts={posts}/>
     </>
   )
 };
