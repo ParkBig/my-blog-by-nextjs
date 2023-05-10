@@ -6,7 +6,7 @@ const BriefGrid = ({ project }: { project: ProjectContent }) => {
     <ul className={style.upper}>
       <li>
         <div>
-          <h4>Main Fun</h4>
+          <h4>Main Fuc</h4>
           <p>{project.subContent}</p>
         </div>
       </li>

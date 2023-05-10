@@ -9,6 +9,40 @@ const DetailContent = ({ project }: { project: ProjectContent }) => {
   const moveValue = useRef({ startX: 0, offsetX: 0, nowX: 0, canIScroll: true, isSwiping: false });
   const [nowIndex, setNowIndex] = useState(1);
 
+  const onTouchStart = (ev: React.TouchEvent) => {
+    moveValue.current.startX = ev.touches[0].pageX;
+  };
+  const onTouchMove = (ev: React.TouchEvent) => {
+    moveValue.current.offsetX = moveValue.current.nowX + (ev.targetTouches[0].pageX - moveValue.current.startX);
+    if (slideRef.current) {
+      slideRef.current.style.transform = `translate3d(${moveValue.current.offsetX}px, 0px, 0px)`;
+      slideRef.current.style.transitionDuration = "0ms";
+    }
+  };
+  const onTouchEnd = (ev: React.TouchEvent) => {
+    const sum = moveValue.current.nowX + (ev.changedTouches[0].pageX - moveValue.current.startX);
+    if (slideRef.current) {
+      const slideWidth = slideRef.current.clientWidth;
+      let destination = Math.round(sum / slideWidth) * slideWidth;
+      if (destination > 0) {
+        destination = 0;
+      } else if (destination < -(slideWidth * (project.image.length - 1))) {
+        destination = -(slideWidth * (project.image.length - 1));
+      }
+
+      if (Math.abs(moveValue.current.nowX) > Math.abs(destination)) {
+        setNowIndex(prev => prev-1);
+      }
+      if (Math.abs(moveValue.current.nowX) < Math.abs(destination)) {
+        setNowIndex(prev => prev+1);
+      }
+
+      slideRef.current.style.transform = `translate3d(${destination}px, 0px, 0px)`;
+      slideRef.current.style.transitionDuration = "300ms";
+      moveValue.current.nowX = destination;
+    }
+  };
+
   const onMouseDown = (ev: React.MouseEvent) => {
     moveValue.current.isSwiping = true;
     moveValue.current.startX = ev.clientX;
@@ -60,6 +94,9 @@ const DetailContent = ({ project }: { project: ProjectContent }) => {
   return (
     <article className={style.wrap}>
       <div className={style.upperImages}
+        onTouchStart={onTouchStart} 
+        onTouchMove={onTouchMove} 
+        onTouchEnd={onTouchEnd}
         onMouseDown={onMouseDown}
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseUp}
