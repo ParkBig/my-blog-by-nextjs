@@ -57,8 +57,6 @@ const DetailContent = ({ project }: { project: ProjectContent }) => {
     ev.preventDefault();
   };
 
-  console.log(nowIndex)
-
   return (
     <article className={style.wrap}>
       <div className={style.upperImages}
