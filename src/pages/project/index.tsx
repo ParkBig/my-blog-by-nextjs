@@ -1,5 +1,5 @@
-import AllProject from "@/components/project/AllProject";
-import getAllProjects from "@/lib/my-project-data";
+import AllProject from "@/components/home-page/my-project/AllProject";
+import { getAllProjects } from "@/lib/my-project-data";
 import { ProjectContent } from "@/type/interface";
 import Head from "next/head";
 

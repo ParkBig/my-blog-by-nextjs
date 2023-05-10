@@ -5,6 +5,7 @@
 }
 
 .project h1 {
+  padding-top: 5rem;
   font-size: var(--size-8);
   color: var(--color-grey-800);
   text-align: center;

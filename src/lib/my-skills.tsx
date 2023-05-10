@@ -47,7 +47,7 @@ const getMySkills = () => {
       ]
     },
     {
-      category: "VerControl",
+      category: "Ver Control",
       data: [
         {
           skillImage: "/assets/skills/vercontrol/git.png"

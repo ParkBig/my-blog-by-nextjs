@@ -1,0 +1,22 @@
+.upper {
+  padding-top: 6rem;
+  width: 90%;
+  max-width: 80rem;
+  margin: var(--size-5) auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.lower h2 {
+  font-size: var(--size-10);
+  margin: 0;
+  text-align: center;
+}
+
+.lower h3 {
+  font-size: var(--size-7);
+  margin: 0 auto 1.5rem 0;
+  text-align: center;
+}

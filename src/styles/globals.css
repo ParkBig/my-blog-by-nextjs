@@ -25,6 +25,9 @@ body {
   --color-primary-600: #480264;
   --color-primary-700: #3d0264;
 
+  --color-green-100: #FFF8DE;
+  --color-green-500: #99A98F;
+
   --color-success-100: #a2f0bc;
   --color-success-500: #12bd4b;
 
@@ -39,6 +42,7 @@ body {
   --size-6: 1.5rem;
   --size-7: 1.7rem;
   --size-8: 2rem;
+  --size-10: 3rem;
   --size-14: 3.4rem;
   --size-16: 4rem;
   --size-20: 5rem;

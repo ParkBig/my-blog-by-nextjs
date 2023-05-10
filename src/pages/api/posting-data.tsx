@@ -1,4 +1,4 @@
-import getAllProjects from "@/lib/my-project-data";
+import { getAllProjects } from "@/lib/my-project-data";
 import { NextApiRequest, NextApiResponse } from "next";
 
 const handler = (req: NextApiRequest, res: NextApiResponse) => {

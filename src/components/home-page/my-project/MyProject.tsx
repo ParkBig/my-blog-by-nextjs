@@ -1,7 +1,7 @@
 import { ProjectContent } from "@/type/interface";
 import style from "@/components/home-page/my-project/myProject.module.css";
 import Image from "next/image";
-import ProjectGrid from "@/components/project/ProjectGrid";
+import ProjectGrid from "./ProjectGrid";
 
 const MyProject = ({ projects }: { projects: ProjectContent[] }) => {
   return (

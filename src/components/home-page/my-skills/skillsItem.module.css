@@ -13,6 +13,7 @@
   font-size: var(--size-8);
   margin: 0 auto 2rem;
   color: var(--color-grey-100);
+  text-decoration: underline;
 }
 
 .skill img {

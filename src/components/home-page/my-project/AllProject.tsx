@@ -1,4 +1,4 @@
-import style from "@/components/project/allProject.module.css";
+import style from "./allProject.module.css";
 import { ProjectContent } from "@/type/interface";
 import ProjectGrid from "./ProjectGrid";
 

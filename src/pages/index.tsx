@@ -2,9 +2,8 @@ import Hero from "@/components/home-page/hero/Hero";
 import MeSummary from "@/components/home-page/me-info/MeSummary";
 import MyProject from "@/components/home-page/my-project/MyProject";
 import MySkills from "@/components/home-page/my-skills/MySkills";
-import getAllProjects from "@/lib/my-project-data";
+import { getAllProjects } from "@/lib/my-project-data";
 import getMySkills from "@/lib/my-skills";
-import { getFeaturedPosts } from "@/lib/posts-utill";
 import { ProjectContent, SkillsContent } from "@/type/interface";
 import Head from "next/head";
 
@@ -12,7 +11,7 @@ const HomePage = ({ projects, skills }: { projects: ProjectContent[], skills: Sk
   return (
     <>
       <Head>
-        <title>jw&apos; Blog</title>
+        <title>PJW&apos; Blog</title>
         <meta name="description" content="I post about programming and web development."/>
       </Head>
       <Hero />

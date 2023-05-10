@@ -8,6 +8,7 @@
   padding: 0 10%;
   position: fixed;
   top: 0px;
+  z-index: 100;
 }
 
 .header ul {
