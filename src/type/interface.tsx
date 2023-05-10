@@ -15,7 +15,7 @@ export interface ProjectContent {
   image: string[],
   content: string,
   subContent: string,
-  github: string,
+  gitHub: string,
   url: string,
   stack: string,
   deployment: string,

@@ -31,9 +31,9 @@ const MainNavigation = () => {
           </a>
           <nav>
             <ul>
-              <li onClick={scrollToTop}><a>About ME</a></li>
+              <li onClick={scrollToTop}><a>Me</a></li>
               <li><ReactScroll to="skills" spy={true} smooth={true}>Skills</ReactScroll></li>
-              <li><ReactScroll to="myProject" spy={true} smooth={true}>My Project</ReactScroll></li>
+              <li><ReactScroll to="myProject" spy={true} smooth={true}>Projects</ReactScroll></li>
             </ul>
           </nav>
         </header>

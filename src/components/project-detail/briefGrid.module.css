@@ -11,7 +11,7 @@
 .upper li div h4 {
   color: var(--color-green-500);
   font-size: var(--size-5);
-  text-align: left;
+  text-align: center;
 }
 
 .upper li div p {

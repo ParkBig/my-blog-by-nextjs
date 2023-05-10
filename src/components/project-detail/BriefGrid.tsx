@@ -24,8 +24,8 @@ const BriefGrid = ({ project }: { project: ProjectContent }) => {
       </li>
       <li>
         <div>
-          <h4>Github</h4>
-          <p>{project.github}</p>
+          <h4>GitHub</h4>
+          <p>{project.gitHub}</p>
         </div>
       </li>
       <li>
