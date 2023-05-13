@@ -6,11 +6,11 @@ const sendContactData = async ({ email, name, message }: ReqBody) => {
     body: JSON.stringify({
       email: email,
       name: name,
-      message: message
+      message: message,
     }),
     headers: {
-      "Content-Type": "application/json"
-    }
+      "Content-Type": "application/json",
+    },
   });
 
   const data = await response.json();

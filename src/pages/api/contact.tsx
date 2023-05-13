@@ -1,6 +1,6 @@
 import { ReqBody, ResBody } from "@/type/interface";
 import { MongoClient } from "mongodb";
-import { NextApiRequest, NextApiResponse } from "next"
+import { NextApiRequest, NextApiResponse } from "next";
 
 const MONGO_DATABASE = process.env.mongodb_database;
 const MONGO_URL = `mongodb+srv://${process.env.mongodb_userName}:${process.env.mongodb_password}@${process.env.mongodb_cluster_name}.cfmmcms.mongodb.net`;
@@ -10,7 +10,14 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "POST") {
     const { email, name, message }: ReqBody = req.body;
 
-    if (!email || !email.includes("@") || !name || name.trim() === "" || !message || message.trim() === "") {
+    if (
+      !email ||
+      !email.includes("@") ||
+      !name ||
+      name.trim() === "" ||
+      !message ||
+      message.trim() === ""
+    ) {
       return res.status(422).json({ msg: "Invalid form." });
     }
 
@@ -32,6 +39,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       await mongoClient.close();
     }
   }
-}
+};
 
-export default handler
+export default handler;

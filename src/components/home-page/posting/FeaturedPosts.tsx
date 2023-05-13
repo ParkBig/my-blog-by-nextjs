@@ -1,14 +1,14 @@
-import style from "@/components/home-page/featuredPosts.module.css"
+import style from "@/components/home-page/featuredPosts.module.css";
 import PostsGrid from "../../posts/PostsGrid";
 import { PostContent } from "@/type/interface";
 
-const FeaturedPosts = ({posts}: {posts: PostContent[]}) => {
+const FeaturedPosts = ({ posts }: { posts: PostContent[] }) => {
   return (
     <section className={style.latest}>
       <h2>Featured Posts</h2>
       <PostsGrid posts={posts} />
     </section>
-  )
-}
+  );
+};
 
 export default FeaturedPosts;

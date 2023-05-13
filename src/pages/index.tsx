@@ -7,20 +7,29 @@ import getMySkills from "@/lib/my-skills";
 import { ProjectContent, SkillsContent } from "@/type/interface";
 import Head from "next/head";
 
-const HomePage = ({ projects, skills }: { projects: ProjectContent[], skills: SkillsContent[] }) => {
+const HomePage = ({
+  projects,
+  skills,
+}: {
+  projects: ProjectContent[];
+  skills: SkillsContent[];
+}) => {
   return (
     <>
       <Head>
         <title>PJW&apos; Blog</title>
-        <meta name="description" content="I post about programming and web development."/>
+        <meta
+          name="description"
+          content="I post about programming and web development."
+        />
       </Head>
       <Hero />
       <MeSummary />
       <MySkills skills={skills} />
       <MyProject projects={projects} />
     </>
-  )
-}
+  );
+};
 
 export const getStaticProps = () => {
   const projects = getAllProjects();
@@ -29,9 +38,9 @@ export const getStaticProps = () => {
   return {
     props: {
       projects,
-      skills
-    }
-  }
+      skills,
+    },
+  };
 };
 
 export default HomePage;

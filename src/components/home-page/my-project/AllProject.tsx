@@ -6,9 +6,9 @@ const AllProject = ({ projects }: { projects: ProjectContent[] }) => {
   return (
     <section className={style.project}>
       <h1>All Project</h1>
-      <ProjectGrid projects={projects}/>
+      <ProjectGrid projects={projects} />
     </section>
-  )
-}
+  );
+};
 
 export default AllProject;

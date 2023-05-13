@@ -11,7 +11,7 @@ const ProjectDetail = ({ project }: { project: ProjectContent }) => {
       </div>
       <DetailContent project={project} />
     </section>
-  )
-}
+  );
+};
 
 export default ProjectDetail;

@@ -1,4 +1,4 @@
-import { Html, Head, Main, NextScript } from 'next/document'
+import { Html, Head, Main, NextScript } from "next/document";
 
 const Document = () => {
   return (
@@ -7,10 +7,10 @@ const Document = () => {
       <body>
         <Main />
         <NextScript />
-        <div id='portal' />
+        <div id="portal" />
       </body>
     </Html>
-  )
-}
+  );
+};
 
 export default Document;

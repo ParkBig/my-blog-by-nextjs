@@ -5,6 +5,10 @@
   border-radius: 15px;
 }
 
+.post:hover {
+  scale: 1.01;
+}
+
 .post a {
   color: var(--color-grey-100);
 }
@@ -17,6 +21,7 @@
 
 .image img {
   object-fit: cover;
+  border-radius: 10px;
 }
 
 .content {

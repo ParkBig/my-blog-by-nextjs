@@ -8,11 +8,16 @@ const MeSummary = () => {
       <div className={style.aboutMe}>
         <Image src="/assets/icons/i.png" alt="me" width={100} height={100} />
         <h2>About Me</h2>
-        <Image src="/assets/icons/reverseI.png" alt="reverseMe" width={100} height={100} />
+        <Image
+          src="/assets/icons/reverseI.png"
+          alt="reverseMe"
+          width={100}
+          height={100}
+        />
       </div>
       <AboutMe />
     </section>
-  )
-}
+  );
+};
 
 export default MeSummary;

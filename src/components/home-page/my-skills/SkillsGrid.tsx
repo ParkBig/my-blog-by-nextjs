@@ -5,9 +5,11 @@ import SkillsItem from "./SkillsItem";
 const SkillsGrid = ({ skills }: { skills: SkillsContent[] }) => {
   return (
     <ul className={style.grid}>
-      {skills.map(skill => <SkillsItem key={skill.category} skill={skill} />)}
+      {skills.map((skill) => (
+        <SkillsItem key={skill.category} skill={skill} />
+      ))}
     </ul>
-  )
-}
+  );
+};
 
 export default SkillsGrid;

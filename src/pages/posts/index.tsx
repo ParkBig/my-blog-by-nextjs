@@ -3,16 +3,19 @@ import { getAllPosts } from "@/lib/posts-utill";
 import { PostContent } from "@/type/interface";
 import Head from "next/head";
 
-const AllPostsPage = ({posts}: {posts: PostContent[]}) => {
+const AllPostsPage = ({ posts }: { posts: PostContent[] }) => {
   return (
     <>
       <Head>
         <title>All Posts</title>
-        <meta name="description" content="A list of all programming-related tutorials and posts!" />
+        <meta
+          name="description"
+          content="A list of all programming-related tutorials and posts!"
+        />
       </Head>
-      <AllPosts posts={posts}/>
+      <AllPosts posts={posts} />
     </>
-  )
+  );
 };
 
 export const getStaticProps = () => {
@@ -20,9 +23,9 @@ export const getStaticProps = () => {
 
   return {
     props: {
-      posts: featuredPosts
-    }
-  }
+      posts: featuredPosts,
+    },
+  };
 };
 
 export default AllPostsPage;

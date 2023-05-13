@@ -7,9 +7,11 @@ const AboutMe = () => {
 
   return (
     <ul className={style.upper}>
-      {meInfo.map(info => <MeInfo key={info.key} info={info} />)}    
+      {meInfo.map((info) => (
+        <MeInfo key={info.key} info={info} />
+      ))}
     </ul>
-  )
-}
+  );
+};
 
 export default AboutMe;

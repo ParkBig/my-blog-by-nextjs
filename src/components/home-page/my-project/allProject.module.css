@@ -1,11 +1,11 @@
 .project {
   width: 90%;
   max-width: 60rem;
+  padding-top: 4rem;
   margin: var(--size-8) auto;
 }
 
 .project h1 {
-  padding-top: 5rem;
   font-size: var(--size-8);
   color: var(--color-grey-800);
   text-align: center;

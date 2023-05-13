@@ -6,7 +6,7 @@ const postsDirectory = path.join(process.cwd(), "src/posts");
 
 export const getPostsFiles = () => {
   return fs.readdirSync(postsDirectory);
-}
+};
 
 export const getPostData = (postIdentifier: string) => {
   const postSlug = postIdentifier.replace(/\.md$/, "");
@@ -19,7 +19,7 @@ export const getPostData = (postIdentifier: string) => {
   const postData = {
     slug: postSlug,
     ...data,
-    content
+    content,
   };
 
   return postData;
@@ -27,19 +27,19 @@ export const getPostData = (postIdentifier: string) => {
 
 export const getAllPosts = () => {
   const postFiles = getPostsFiles();
-  const allPosts = postFiles.map(postFile => getPostData(postFile));
+  const allPosts = postFiles.map((postFile) => getPostData(postFile));
 
   //@ts-ignore
-  const sortedPosts = allPosts.sort((a,b) => a.date > b.date ? -1: 1);
+  const sortedPosts = allPosts.sort((a, b) => (a.date > b.date ? -1 : 1));
 
   return sortedPosts;
 };
 
 export const getFeaturedPosts = () => {
   const allPosts = getAllPosts();
-  
+
   //@ts-ignore
-  const featuredPosts = allPosts.filter(post => post.isFeatured);
+  const featuredPosts = allPosts.filter((post) => post.isFeatured);
 
   return featuredPosts;
 };

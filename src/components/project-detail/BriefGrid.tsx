@@ -35,7 +35,7 @@ const BriefGrid = ({ project }: { project: ProjectContent }) => {
         </div>
       </li>
     </ul>
-  )
-}
+  );
+};
 
 export default BriefGrid;

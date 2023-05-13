@@ -6,21 +6,31 @@ import { DragEvent, useRef, useState } from "react";
 
 const DetailContent = ({ project }: { project: ProjectContent }) => {
   const slideRef = useRef<HTMLDivElement>(null);
-  const moveValue = useRef({ startX: 0, offsetX: 0, nowX: 0, canIScroll: true, isSwiping: false });
+  const moveValue = useRef({
+    startX: 0,
+    offsetX: 0,
+    nowX: 0,
+    canIScroll: true,
+    isSwiping: false,
+  });
   const [nowIndex, setNowIndex] = useState(1);
 
   const onTouchStart = (ev: React.TouchEvent) => {
     moveValue.current.startX = ev.touches[0].pageX;
   };
   const onTouchMove = (ev: React.TouchEvent) => {
-    moveValue.current.offsetX = moveValue.current.nowX + (ev.targetTouches[0].pageX - moveValue.current.startX);
+    moveValue.current.offsetX =
+      moveValue.current.nowX +
+      (ev.targetTouches[0].pageX - moveValue.current.startX);
     if (slideRef.current) {
       slideRef.current.style.transform = `translate3d(${moveValue.current.offsetX}px, 0px, 0px)`;
       slideRef.current.style.transitionDuration = "0ms";
     }
   };
   const onTouchEnd = (ev: React.TouchEvent) => {
-    const sum = moveValue.current.nowX + (ev.changedTouches[0].pageX - moveValue.current.startX);
+    const sum =
+      moveValue.current.nowX +
+      (ev.changedTouches[0].pageX - moveValue.current.startX);
     if (slideRef.current) {
       const slideWidth = slideRef.current.clientWidth;
       let destination = Math.round(sum / slideWidth) * slideWidth;
@@ -31,10 +41,10 @@ const DetailContent = ({ project }: { project: ProjectContent }) => {
       }
 
       if (Math.abs(moveValue.current.nowX) > Math.abs(destination)) {
-        setNowIndex(prev => prev-1);
+        setNowIndex((prev) => prev - 1);
       }
       if (Math.abs(moveValue.current.nowX) < Math.abs(destination)) {
-        setNowIndex(prev => prev+1);
+        setNowIndex((prev) => prev + 1);
       }
 
       slideRef.current.style.transform = `translate3d(${destination}px, 0px, 0px)`;
@@ -51,7 +61,8 @@ const DetailContent = ({ project }: { project: ProjectContent }) => {
     if (moveValue.current.isSwiping) {
       if (ev.clientX !== moveValue.current.startX) {
         moveValue.current.canIScroll = false;
-        moveValue.current.offsetX = (moveValue.current.nowX + (ev.clientX - moveValue.current.startX));
+        moveValue.current.offsetX =
+          moveValue.current.nowX + (ev.clientX - moveValue.current.startX);
         if (slideRef.current) {
           slideRef.current.style.transform = `translate3d(${moveValue.current.offsetX}px, 0px, 0px)`;
           slideRef.current.style.transitionDuration = "0ms";
@@ -61,7 +72,8 @@ const DetailContent = ({ project }: { project: ProjectContent }) => {
   };
   const onMouseUp = (ev: React.MouseEvent) => {
     if (moveValue.current.isSwiping) {
-      const sum = moveValue.current.nowX + (ev.clientX - moveValue.current.startX);
+      const sum =
+        moveValue.current.nowX + (ev.clientX - moveValue.current.startX);
       if (slideRef.current) {
         const slideWidth = slideRef.current.clientWidth;
         let destination = Math.round(sum / slideWidth) * slideWidth;
@@ -70,12 +82,12 @@ const DetailContent = ({ project }: { project: ProjectContent }) => {
         } else if (destination < -(slideWidth * (project.image.length - 1))) {
           destination = -(slideWidth * (project.image.length - 1));
         }
-  
+
         if (Math.abs(moveValue.current.nowX) > Math.abs(destination)) {
-          setNowIndex(prev => prev-1);
+          setNowIndex((prev) => prev - 1);
         }
         if (Math.abs(moveValue.current.nowX) < Math.abs(destination)) {
-          setNowIndex(prev => prev+1);
+          setNowIndex((prev) => prev + 1);
         }
 
         slideRef.current.style.transform = `translate3d(${destination}px, 0px, 0px)`;
@@ -84,7 +96,7 @@ const DetailContent = ({ project }: { project: ProjectContent }) => {
       }
       moveValue.current.isSwiping = false;
       moveValue.current.canIScroll = true;
-    };
+    }
   };
 
   const dragPrevent = (ev: DragEvent<HTMLDivElement>) => {
@@ -93,9 +105,10 @@ const DetailContent = ({ project }: { project: ProjectContent }) => {
 
   return (
     <article className={style.wrap}>
-      <div className={style.upperImages}
-        onTouchStart={onTouchStart} 
-        onTouchMove={onTouchMove} 
+      <div
+        className={style.upperImages}
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
         onMouseDown={onMouseDown}
         onMouseMove={onMouseMove}
@@ -103,11 +116,22 @@ const DetailContent = ({ project }: { project: ProjectContent }) => {
         onMouseUp={onMouseUp}
       >
         <div className={style.shell} ref={slideRef}>
-          {project.image.map(img => <Image onDragStart={dragPrevent} key={img} src={img} alt={project.title} width={1000} height={1000} />)}
+          {project.image.map((img) => (
+            <Image
+              onDragStart={dragPrevent}
+              key={img}
+              src={img}
+              alt={project.title}
+              width={1000}
+              height={1000}
+            />
+          ))}
         </div>
       </div>
       <div className={style.count}>
-        <h4>{nowIndex} /{project.image.length}</h4>
+        <h4>
+          {nowIndex} /{project.image.length}
+        </h4>
       </div>
       <div className={style.content}>
         <div>
@@ -120,7 +144,7 @@ const DetailContent = ({ project }: { project: ProjectContent }) => {
         </div>
       </div>
     </article>
-  )
-}
+  );
+};
 
 export default DetailContent;

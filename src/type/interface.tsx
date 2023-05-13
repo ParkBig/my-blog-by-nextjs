@@ -10,15 +10,15 @@ export interface PostContent {
 
 export interface ProjectContent {
   id: string;
-  title: string,
-  subTitle: string,
-  image: string[],
-  content: string,
-  subContent: string,
-  gitHub: string,
-  url: string,
-  stack: string,
-  deployment: string,
+  title: string;
+  subTitle: string;
+  image: string[];
+  content: string;
+  subContent: string;
+  gitHub: string;
+  url: string;
+  stack: string;
+  deployment: string;
 }
 
 export interface ReqBody {

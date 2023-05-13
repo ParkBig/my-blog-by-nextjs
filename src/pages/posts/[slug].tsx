@@ -13,8 +13,8 @@ const PostsDetailPage = ({ post }: { post: Post }) => {
       </Head>
       <PostContent post={post} />
     </>
-  )
-}
+  );
+};
 
 export const getStaticProps = (context: GetStaticPropsContext) => {
   const { params } = context;
@@ -26,20 +26,20 @@ export const getStaticProps = (context: GetStaticPropsContext) => {
 
   return {
     props: {
-      post: postData
+      post: postData,
     },
-    revalidate: 600
-  }
-}
+    revalidate: 600,
+  };
+};
 
 export const getStaticPaths = () => {
   const postsFileNames = getPostsFiles();
-  const slugs = postsFileNames.map(fileName => fileName.replace(/\.md$/, ""))
+  const slugs = postsFileNames.map((fileName) => fileName.replace(/\.md$/, ""));
 
   return {
-    paths: slugs.map(slug => ({ params: { slug } })),
-    fallback: false
-  }
-}
+    paths: slugs.map((slug) => ({ params: { slug } })),
+    fallback: false,
+  };
+};
 
 export default PostsDetailPage;

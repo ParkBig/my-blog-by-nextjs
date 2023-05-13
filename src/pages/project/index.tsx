@@ -12,17 +12,17 @@ const AllProjectPage = ({ projects }: { projects: ProjectContent[] }) => {
       </Head>
       <AllProject projects={projects} />
     </>
-  )
-}
+  );
+};
 
 export const getStaticProps = async () => {
   const projects = getAllProjects();
 
   return {
     props: {
-      projects
-    }
-  }
-}
+      projects,
+    },
+  };
+};
 
 export default AllProjectPage;

@@ -5,9 +5,11 @@ import PostItem from "./PostItem";
 const PostsGrid = ({ posts }: { posts: PostContent[] }) => {
   return (
     <ul className={style.grid}>
-      {posts.map(post => <PostItem key={post.slug} post={post} />)}
+      {posts.map((post) => (
+        <PostItem key={post.slug} post={post} />
+      ))}
     </ul>
-  )
-}
+  );
+};
 
 export default PostsGrid;

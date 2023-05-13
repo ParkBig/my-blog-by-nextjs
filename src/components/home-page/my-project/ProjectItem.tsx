@@ -11,7 +11,13 @@ const ProjectItem = ({ project }: { project: ProjectContent }) => {
     <li className={style.post}>
       <Link href={lingPath}>
         <div className={style.image}>
-          <Image src={imagePath} alt={project.title} width={300} height={200} priority />
+          <Image
+            src={imagePath}
+            alt={project.title}
+            width={300}
+            height={200}
+            priority
+          />
         </div>
         <div className={style.content}>
           <h3>{project.title}</h3>
@@ -20,7 +26,7 @@ const ProjectItem = ({ project }: { project: ProjectContent }) => {
         </div>
       </Link>
     </li>
-  )
-}
+  );
+};
 
 export default ProjectItem;

@@ -9,11 +9,11 @@ const ProjectDetailPage = ({ project }: { project: ProjectContent }) => {
     <>
       <Head>
         <title>Project | {project.title}</title>
-        <meta name="description" content="my detail project"/>
+        <meta name="description" content="my detail project" />
       </Head>
-      <ProjectDetail project={project}/>
+      <ProjectDetail project={project} />
     </>
-  )
+  );
 };
 
 export const getStaticProps = (context: GetStaticPropsContext) => {
@@ -25,20 +25,20 @@ export const getStaticProps = (context: GetStaticPropsContext) => {
 
   return {
     props: {
-      project
+      project,
     },
-    revalidate: 600
-  }
-}
+    revalidate: 600,
+  };
+};
 
 export const getStaticPaths = () => {
   const allProjects = getAllProjects();
-  const slugs = allProjects.map(project => project.title);
+  const slugs = allProjects.map((project) => project.title);
 
   return {
-    paths: slugs.map(slug => ({ params: { slug } })),
-    fallback: false
-  }
-}
+    paths: slugs.map((slug) => ({ params: { slug } })),
+    fallback: false,
+  };
+};
 
 export default ProjectDetailPage;

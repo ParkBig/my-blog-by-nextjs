@@ -9,6 +9,6 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
   } else {
     return res.status(500).json({ msg: "you can access." });
   }
-}
+};
 
 export default handler;

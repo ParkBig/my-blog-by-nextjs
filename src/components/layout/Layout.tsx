@@ -4,11 +4,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <MainNavigation />
-      <main>
-        {children}
-      </main>
+      <main>{children}</main>
     </>
-  )
-}
+  );
+};
 
 export default Layout;
