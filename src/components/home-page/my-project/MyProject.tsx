@@ -2,7 +2,6 @@ import { ProjectContent } from "@/type/interface";
 import style from "@/components/home-page/my-project/myProject.module.css";
 import Image from "next/image";
 import ProjectGrid from "./ProjectGrid";
-import Link from "next/link";
 
 const MyProject = ({ projects }: { projects: ProjectContent[] }) => {
   return (
@@ -14,9 +13,7 @@ const MyProject = ({ projects }: { projects: ProjectContent[] }) => {
           width={100}
           height={100}
         />
-        <h2>
-          <Link href="/project">My Projects</Link>
-        </h2>
+        <h2>My Projects</h2>
         <Image
           src="/assets/icons/reverseProject.png"
           alt="reverseProject"

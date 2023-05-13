@@ -46,7 +46,11 @@ const MainNavigation = () => {
                   Projects
                 </ReactScroll>
               </li>
-              {/* <li><ReactScroll to="myPosts" spy={true} smooth={true}>Posts</ReactScroll></li> */}
+              <li>
+                <ReactScroll to="myPosts" spy={true} smooth={true}>
+                  Posts
+                </ReactScroll>
+              </li>
             </ul>
           </nav>
         </header>

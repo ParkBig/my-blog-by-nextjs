@@ -5,7 +5,6 @@ import Link from "next/link";
 
 const PostItem = ({ post }: { post: PostContent }) => {
   const formattedDate = new Date(post.date).toLocaleDateString("en-US", {
-    day: "numeric",
     month: "long",
     year: "numeric",
   });
